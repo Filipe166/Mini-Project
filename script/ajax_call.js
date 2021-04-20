@@ -1,9 +1,10 @@
 //load pag
 $(document).ready(function () {
+    //console.log($('#ccat').val());
     $.ajax({
         url: 'Modulo_php/catalog_q.php',
         dataType: 'json',
-        data: cat = $('#ccat').val(),
+
 
     })
         .done(function (result) {
@@ -23,6 +24,15 @@ $(document).ready(function () {
             console.log('Ajax fail' + result);
         })
 
+})
+
+
+
+
+
+$('#ccat').change(function () {
+
+    console.log('hi');
 })
 
 

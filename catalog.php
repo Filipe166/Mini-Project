@@ -22,22 +22,17 @@ $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
 
 
         </form>
+
+
         <div>
-            <div>
-                Sort by : <button id="az">A-Z </button>
-            </div>
-            <div>
-                Date : <button id="asc">Asc </button> / <button id="des">Des </button>
-            </div>
+            Sort by Date : <button id="asc">Asc </button> / <button id="des">Des </button>
         </div>
+
     </section>
     <!-- came for the ajax -->
     <section id="catalog">
-
         <article id="descri">
         </article>
-
-
     </section>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="script/ajax_call.js"></script>
