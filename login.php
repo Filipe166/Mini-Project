@@ -11,10 +11,8 @@
 <body>
     <form action="" method="POST">
         <h2>Login</h2>
-        <input type="text" placeholder="Firstname"><br>
-        <input type="text" placeholder="Lastname"><br>
-        <input type="text" placeholder="E-mail"><br>
-        <input type="text" placeholder="Password"><br>
+        <input type="email" name="email" placeholder="E-mail"><br>
+        <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" name="login" value="Log In">
     </form>
 </body>
@@ -31,26 +29,31 @@ if (isset($_POST['login'])) {
     $mail = trim($_POST['email']);
     $password = trim($_POST['password']);
 
-    $conn = mysqli_connect('localhost', 'root', '', 'user_db');
+    $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
-    $query = "SELECT * FROM users WHERE email = '$mail'";
+    $query = "SELECT * FROM user WHERE email_user = '$mail'";
 
     $results = mysqli_query($conn, $query);
 
+    // How many records did I get ?
     $nb_records = mysqli_num_rows($results);
 
-    if ($records == 1) {
-        if (password_verify($_POST['password'], $data_user['password'])) {
-            echo '<p class="log"> You are logged in</p>';
-            $_SESSION['email'] = $_POST['email'];
-            $_SESSION['firstname'] = $data_user['first_name'];
-            $_SESSION['lastname'] = $data_user['last_name'];
-            header('location: home.php');
+    $data_user = mysqli_fetch_array($results, MYSQLI_ASSOC);
+
+    // Does the user exists in my db ?
+    if ($nb_records > 0) {
+        $mail = mysqli_fetch_assoc($results);
+        // Check if passwords matches
+        if (password_verify($password, $mail['password'])) {
+            session_start();
+            // Save the mail (from my form) into the session
+            $_SESSION['mail'] = $_POST['email'];
+            echo '<a href="account.php">Go to account page</a>';
         } else {
-            echo '<p class="log"> Password does not match</p>';
+            echo 'Password doesnt match';
         }
     } else {
-        echo '<p class="log"> Wrong credentials </p>';
+        echo "Wrong credentials.";
     }
 }
 ?>

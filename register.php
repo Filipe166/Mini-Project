@@ -10,17 +10,16 @@
 
 <body>
 
-
-
     <?php
 
     include_once 'config/conn.php';
     include_once 'nav.php';
 
+    session_start();
     $errors = array();
 
     if (isset($_POST['reg'])) {
-        // Validations on the inputs
+        // Validations of the inputs
         $firstname = trim($_POST['firstname']);
         $lastname = trim($_POST['lastname']);
         $email = trim($_POST['email']);
@@ -45,7 +44,7 @@
 
         if (count($errors) == 0) {
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
-            $query = "SELECT * FROM users WHERE email = '$sanitizeEmail'";
+            $query = "SELECT * FROM user WHERE email_user = '$sanitizeEmail'";
 
             $resultMail = mysqli_query($conn, $query);
 
@@ -56,7 +55,7 @@
                 $hashPassword = password_hash($password, PASSWORD_DEFAULT);
 
                 // Prepare query
-                $query = "INSERT INTO users(first_name,last_name, email, password)
+                $query = "INSERT INTO user(fname_user,lname_user, email_user, password)
                 VALUES('$firstname', '$lastname', '$sanitizeEmail', '$hashPassword')";
 
                 // Execute the query
