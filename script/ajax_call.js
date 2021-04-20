@@ -3,6 +3,8 @@ $(document).ready(function () {
     $.ajax({
         url: 'Modulo_php/catalog_q.php',
         dataType: 'json',
+        data: cat = $('#ccat').val(),
+
     })
         .done(function (result) {
             // console.log('sussece' + result);
@@ -23,6 +25,20 @@ $(document).ready(function () {
 
 })
 
-// clik om az
-// clik om asc
-// clik om des
+
+$('#az').click(function () {
+
+
+
+})
+
+$('#asc').click(function () {
+    console.log('asc');
+
+})
+
+$('#des').click(function () {
+    console.log('des');
+
+})
+
