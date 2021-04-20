@@ -14,14 +14,15 @@
 
     <?php
 
-    include_once 'database.php';
+    include_once 'config/conn.php';
     include_once 'nav.php';
 
     $errors = array();
 
     if (isset($_POST['reg'])) {
         // Validations on the inputs
-        $userName = trim($_POST['username']);
+        $firstname = trim($_POST['firstname']);
+        $lastname = trim($_POST['lastname']);
         $email = trim($_POST['email']);
         $sanitizeEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $password = trim($_POST['password']);
@@ -43,20 +44,12 @@
         }
 
         if (count($errors) == 0) {
-            $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD, DB_NAME);
-
-            // First, check if username is already taken
-            $query = "SELECT * FROM users WHERE username = '$userName'";
-
-            $resultName = mysqli_query($conn, $query);
-
-            // Then, check if mail is already taken
+            $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $query = "SELECT * FROM users WHERE email = '$sanitizeEmail'";
 
             $resultMail = mysqli_query($conn, $query);
 
-            if (mysqli_num_rows($resultEmail) > 0) {
-
+            if (mysqli_num_rows($resultMail) > 0) {
                 $errors['email'] = 'Email already taken';
             } else {
                 // Hash the password
@@ -64,7 +57,7 @@
 
                 // Prepare query
                 $query = "INSERT INTO users(first_name,last_name, email, password)
-            VALUES('$firstname', '$lastname', '$sanitizeEmail', '$hashPassword')";
+                VALUES('$firstname', '$lastname', '$sanitizeEmail', '$hashPassword')";
 
                 // Execute the query
                 $result = mysqli_query($conn, $query);
@@ -78,6 +71,8 @@
     }
 
     ?>
+
+    <h2>Register</h2>
     <form action="" method="post">
         <input type="text" name="firstname" placeholder="First Name"><br>
         <?php if (isset($errors['firstname'])) echo $errors['firstname'] ?>

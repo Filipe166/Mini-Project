@@ -11,10 +11,10 @@
 <body>
     <form action="" method="POST">
         <h2>Login</h2>
-        <input type="text" placeholder="Firstname">
-        <input type="text" placeholder="Lastname">
-        <input type="text" placeholder="E-mail">
-        <input type="text" placeholder="Password">
+        <input type="text" placeholder="Firstname"><br>
+        <input type="text" placeholder="Lastname"><br>
+        <input type="text" placeholder="E-mail"><br>
+        <input type="text" placeholder="Password"><br>
         <input type="submit" name="login" value="Log In">
     </form>
 </body>
@@ -22,7 +22,7 @@
 </html>
 
 <?php
-include_once 'database.php';
+include_once 'config/conn.php';
 include_once 'nav.php';
 
 // If form was submitted
