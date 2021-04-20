@@ -17,6 +17,8 @@
       <li><a href="#">Categories</a></li>
       <li><a href="catalog.php">Catalog</a></li>
       <li><a href="#">Add a product</a></li>
+      <li><a href="login.php">Login</a></li>
+      <li><a href="register.php">Register</a></li>
     </ul>
   </nav>
   <form action="" method="POST"></form>
@@ -27,10 +29,6 @@
     We will describe the website here, introduces the concept and firstly,
     displays a large and wide search field, for searching among the products.
   </p>
-
-  <form action="" method="POST"></form>
-  <input type="text" placeholder="Search" />
-  <input type="submit" />
 
 
 </body>
