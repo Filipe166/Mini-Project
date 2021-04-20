@@ -37,6 +37,9 @@
         if (empty($password)) {
             $errors['password'] = 'Password is mandatory.<br>';
         }
+        if (strlen($password) < 8) {
+            $errors['password'] = 'Password should have at least 8 characters.<br>';
+        }
 
         if (!filter_var($sanitizeEmail, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'Email has to be a valid one.<br>';

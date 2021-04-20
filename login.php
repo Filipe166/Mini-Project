@@ -1,3 +1,5 @@
+<?php include_once 'nav.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +15,10 @@
         <h2>Login</h2>
         <input type="email" name="email" placeholder="E-mail"><br>
         <input type="password" name="password" placeholder="Password"><br>
-        <input type="submit" name="login" value="Log In">
+        <input type="submit" name="login" value="Log In"> <br>
+        <a href="register.php">Don't have an account yet? Click here to go to register.</a> <br>
+        <a href="register.php">Forgot your password?</a>
+
     </form>
 </body>
 
@@ -37,8 +42,6 @@ if (isset($_POST['login'])) {
 
     // How many records did I get ?
     $nb_records = mysqli_num_rows($results);
-
-    $data_user = mysqli_fetch_array($results, MYSQLI_ASSOC);
 
     // Does the user exists in my db ?
     if ($nb_records > 0) {
