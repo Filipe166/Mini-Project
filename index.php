@@ -15,6 +15,7 @@
     <ul>
       <li><a href="#">Home</a></li>
       <li><a href="#">Categories</a></li>
+      <li><a href="catalog.php">Catalog</a></li>
       <li><a href="#">Add a product</a></li>
     </ul>
   </nav>
