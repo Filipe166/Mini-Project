@@ -1,0 +1,218 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: -webkit-linear-gradient(left,#040D3E, #3B1D60);
+}
+.line{
+    
+    background: rgb(153,85,4);
+    background: linear-gradient(0deg, rgba(153,85,4,1) 0%, rgba(255,255,255,1) 100%, rgba(255,255,255,1) 100%);
+    visibility: hidden;
+    width:2px;
+    border-radius: 30px;
+    height:50px;
+    position: absolute;
+    bottom: 100%;
+
+}
+
+.navHover{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navHover:hover .line{
+    visibility: visible;
+
+}
+
+
+.nav{
+    margin: auto;
+    margin-top: 40px;
+    width: 70%;
+    color: white;
+}
+.icon{
+    display: flex;
+    flex-direction: row;
+    font-size: 30px;
+    justify-content: left;
+    align-items: center;
+    
+}
+.fas{
+    color: white;
+    background-color: #F2994A;
+    border-radius: 50%;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+}
+h1{
+    margin-left: 15px;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav_ul{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+.menu{
+ 
+    display: inline-flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.menu li{
+    padding: 10px;
+}
+.menu li a{
+    color:#F2994A;
+    padding: 10px;
+    text-decoration: none;
+    
+}
+
+.nav_ul li{
+    list-style: none;
+}
+
+.register{
+    display: flex;
+    gap: 10px;
+
+}
+.register li a {
+ 
+    text-decoration: none;
+    color:white;
+    padding: 20px;
+
+}
+.register li:first-child{
+    background-color: #F2994A;
+    padding: 10px;
+    border-radius: 15px;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.8s;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.register li:first-child:hover{
+    background-color: #3B1D60;
+
+}
+
+.register li:last-child{
+    background-color: #F2994A;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.2s;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+.register li:last-child:hover{
+    background-color: #3B1D60;    
+}
+.vl{
+    border-left: 4px solid #F2994A;
+    border-radius: 15px;
+}
+
+.logout{
+    color: white;
+    background-color: #F2994A;
+    border-radius: 15px;
+    padding: 10px;
+    text-decoration: none;
+    width: 100px;
+    text-align: center;
+    font-weight: 700;
+    transition: 0.8s;
+    border: 1px solid #F2994A;
+    cursor: pointer;
+}
+.logout:hover{
+    background-color:#040D3E ;
+    border: 1px solid #040D3E;
+
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 100%, 0);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  
+  @keyframes fadeInRight {
+    0% {
+      opacity: 0;
+      transform: translate3d(100%, 0, 0);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+
+    /** Basic styles for an animated element */
+    .scene_element {
+      animation-duration: 0.50s;
+      transition-timing-function: ease-in;
+      animation-fill-mode: both;
+  
+    }
+  
+    /** An element that fades in */
+    .scene_element--fadein {
+      animation-name: fadeIn;
+    }
+  
+    /** An element that fades in and slides up */
+    .scene_element--fadeinup {
+      animation-name: fadeInUp;
+    }
+  
+    /** An element that fades in and slides from the right */
+    .scene_element--fadeinright {
+      animation-name: fadeInRight;
+    }
+  
