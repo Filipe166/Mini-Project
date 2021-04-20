@@ -76,7 +76,9 @@ CREATE TABLE `user` (
   `fname_user` varchar(50) NOT NULL,
   `lname_user` varchar(50) NOT NULL,
   `email_user` varchar(150) NOT NULL,
-  `password` varchar(70) NOT NULL
+  `password` varchar(70) NOT NULL,
+  `role` varchar(70) NOT NULL DEFAULT 'user'
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
