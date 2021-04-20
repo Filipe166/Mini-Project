@@ -1,8 +1,8 @@
 
     
     <?php
-    // INCLUDE ONCE NAVIGATION
     include_once 'database.php';
+    include_once 'nav.php';
 
     // If form was submitted
     if (isset($_POST['login'])) {

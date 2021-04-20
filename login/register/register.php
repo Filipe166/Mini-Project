@@ -14,9 +14,8 @@
 
     <?php
 
-    // TO ADD INCLUDE ONCE NAVIGATION
-    // Connect to DB
     include_once 'database.php';
+    include_once 'nav.php';
 
     $errors = array();
 
