@@ -1,5 +1,5 @@
 <?php
-include_once '../config/conn.php';
+include_once '../includes/conn.php';
 $id_prod = $_GET['id'];
 // echo $id_prod;
 
