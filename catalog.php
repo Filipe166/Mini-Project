@@ -24,9 +24,9 @@ $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
         </form>
 
 
-        <!-- <div>
+        <div>
             Sort by Date : <button id="asc">Asc </button> / <button id="des">Des </button>
-        </div> -->
+        </div>
 
     </section>
     <!-- came for the ajax -->
