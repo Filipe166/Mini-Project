@@ -14,3 +14,25 @@ body{
     max-width: 80%;
     margin: auto;
 }
+footer{
+
+    background-color: black;
+}
+.footer_content {
+    width: 90%;
+    margin: auto;
+    
+    height: 400px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer_img img{
+    width: 200px;
+    height: 200px;
+}
+.footer_name h2{
+    margin-bottom: 20px;
+    color: red;
+}
