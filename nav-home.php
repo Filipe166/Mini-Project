@@ -14,6 +14,7 @@
 
     .header_ul {
       margin-top: 30px;
+      margin-bottom: 20px;
       display: flex;
       align-items: center;
       list-style: none;
@@ -68,14 +69,7 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-    }
-
-    .search_Pro input {
-      width: 150px;
-      height: 30px;
-      border: none;
-      border-radius: 10px;
-      margin-left: 10px;
+      gap: 10px;
     }
 
     .search_Pro label {
@@ -88,9 +82,7 @@
       gap: 20px;
     }
   </style>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 </head>
@@ -112,13 +104,10 @@
         <div class="container">
           <div class="row">
             <div class="col-md-4">
-              <!-- <div class="search_Cat">
-                <label>Category:</label>
-                <input type="search" name="city" id="search" placeholder="Type to search..." class="form-control">
-              </div> -->
+
               <div class="search_Pro">
                 <label>Producs:</label>
-                <input type="search" name="city" id="searchProduc" placeholder="Type to search..." class="form-control">
+                <input type="search" name="city" id="searchProduc" placeholder="Type to search Product" class="form-control">
               </div>
             </div>
           </div>
@@ -129,18 +118,24 @@
         </div>
       </ul>
     </nav>
+
+    <script type="text/javascript">
+      $(function() {
+        $("#searchProduc").autocomplete({
+          source: 'searchProduc.php',
+        });
+      });
+    </script>
+
   </header>
 
-  <script type="text/javascript">
-    $(function() {
-      $("#search").autocomplete({
-        source: 'searchbar.php',
-      });
-      $("#searchProduc").autocomplete({
-        source: 'searchProduc.php',
-      });
-    });
-  </script>
+
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
 </body>
 
 </html>

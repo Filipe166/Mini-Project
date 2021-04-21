@@ -3,13 +3,15 @@ function done(result) {
     $('#descri').html('');
     $.each(result, function (key, JsonCat) {
         console.log(JsonCat);
-        $('#descri').append("<img src=" + JsonCat.post_products + " >")
-        $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
-        $('#descri').append('<p> <a href= "Modulo_php/detale.php?id=' + JsonCat.id_products + '">Detaill</a></p>')
+
+        $('#descri').append("<img src=" + 'uploads/' + JsonCat.post_products + " >")
+        $('#descri').append("<div> " + JsonCat.name_products + "</div>")
+        $('#descri').append("<div> " + JsonCat.relese_date_products + "</div>")
+        $('#descri').append("<div> " + JsonCat.discription_products + "</div>")
+        $('#descri').append("<div> " + JsonCat.price_products + "</div>")
+        $('#descri').append("<div> " + JsonCat.name_categories + "</div>")
+        $('#descri').append('<p> <a href= "Modulo_php/detale.php?id=' + JsonCat.id_products + '">Detaill</a></div>')
+
 
     })
 }
