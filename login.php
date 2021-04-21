@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $mail['password'])) {
             session_start();
             // Save the mail (from my form) into the session
-            $_SESSION['mail'] = $_POST['email'];
+            $_SESSION['email'] = $_POST['email'];
             echo '<a href="account.php">Go to account page</a>';
         } else {
             echo 'Password doesnt match';
