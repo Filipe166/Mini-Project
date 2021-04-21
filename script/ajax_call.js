@@ -9,35 +9,27 @@ function done(result) {
         $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
         $('#descri').append("<p> " + JsonCat.price_products + "</p>")
         $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
+        $('#descri').append('<p> <a href= "Modulo_php/detale.php?id=' + JsonCat.id_products + '">Detaill</a></p>')
 
     })
 }
-function fail() {
-
+function fail(result) {
+    console.log('Ajax fail' + result);
 }
-
 //load pag
 $(document).ready(function () {
     //console.log($('#ccat').val());
     $.ajax({
         url: 'Modulo_php/catalog_q.php',
         dataType: 'json',
-
     })
-
-
         .done(function (result) {
             done(result);
         })
         .fail(function (result) {
-            console.log('Ajax fail' + result);
+            fail(result)
         })
-
 })
-
-
-
-
 
 $('#ccat').change(function (e) {
     e.preventDefault();
@@ -46,30 +38,14 @@ $('#ccat').change(function (e) {
         dataType: 'json',
         type: 'post',
         data: $("form").serialize()
-
-
     })
         .done(function (result) {
-            // console.log('sussece' + result);
-            $('#descri').html('');
-            $.each(result, function (key, JsonCat) {
-                console.log(JsonCat);
-                $('#descri').append("<img src=" + JsonCat.post_products + " >")
-                $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
-
-            })
+            done(result);
         })
         .fail(function (result) {
-            console.log('Ajax fail' + result);
+            fail(result)
         })
-
 })
-
-
 
 
 $('#asc').click(function (e) {
@@ -82,22 +58,13 @@ $('#asc').click(function (e) {
         data: 'as',
     })
 
-        .done(function (result) {
-            console.log(result);
-            console.log('sussece' + result);
-            $('#descri').html('');
-            $.each(result, function (key, JsonCat) {
-                $('#descri').append("<img src=" + JsonCat.post_products + " >")
-                $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
 
-            })
+
+        .done(function (result) {
+            done(result);
         })
         .fail(function (result) {
-            console.log('Ajax fail' + result);
+            fail(result)
         })
 
 })
@@ -111,22 +78,16 @@ $('#des').click(function (e) {
         data: 'des',
     })
 
-        .done(function (result) {
-            // console.log('sussece' + result);
-            $('#descri').html('');
-            $.each(result, function (key, JsonCat) {
-                console.log(JsonCat);
-                $('#descri').append("<img src=" + JsonCat.post_products + " >")
-                $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
 
-            })
+
+        .done(function (result) {
+            done(result);
         })
         .fail(function (result) {
-            console.log('Ajax fail' + result);
+            fail(result)
         })
 
 })
+
+
+//click
