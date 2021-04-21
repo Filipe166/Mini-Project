@@ -19,9 +19,9 @@
     session_start();
 
     // Do I got a mail in my session ?
-    if (isset($_SESSION['mail'])) {
+    if (isset($_SESSION['email'])) {
         // Someone loggued in
-        echo 'Welcome, ' . $_SESSION['mail'];
+        echo 'Welcome, ' . $_SESSION['email'];
     } else {
         // Someone try to access the page without log in
         header('location: login.php');
@@ -31,7 +31,7 @@
     // Log out process :
     if (isset($_POST['logout'])) {
         // session_destroy();
-        unset($_SESSION['mail']);
+        unset($_SESSION['email']);
         header('location: login.php');
         exit();
     }
