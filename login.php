@@ -31,8 +31,8 @@ include_once 'nav.php';
 // If form was submitted
 if (isset($_POST['login'])) {
 
-    $mail = trim($_POST['email']);
-    $password = trim($_POST['password']);
+    $mail = htmlspecialchars(trim($_POST['email']));
+    $password = htmlspecialchars(trim($_POST['password']));
 
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $mail['password'])) {
             session_start();
             // Save the mail (from my form) into the session
-            $_SESSION['mail'] = $_POST['email'];
+            $_SESSION['email'] = $_POST['email'];
             echo '<a href="account.php">Go to account page</a>';
         } else {
             echo 'Password doesnt match';
