@@ -1,5 +1,5 @@
 <?php
-include_once '../config/conn.php';
+include_once '../includes/conn.php';
 if (isset($_POST['cat'])) {
 
     $id_categ = $_POST['cat'];

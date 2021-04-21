@@ -1,21 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <h1>Your Account Page</h1>
-    <form action="" method="POST">
-        <input type="submit" value="Log out" name="logout">
-    </form>
-
     <?php
+    include_once 'nav.php';
     session_start();
 
     // Do I got a mail in my session ?
@@ -37,9 +21,26 @@
     }
 
     ?>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+
+        <h1>Your Account Page</h1>
+        <form action="" method="POST">
+            <input type="submit" value="Log out" name="logout">
+        </form>
 
 
 
-</body>
 
-</html>
+    </body>
+
+    </html>

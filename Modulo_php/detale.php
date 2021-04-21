@@ -1,5 +1,6 @@
 <?php
-include_once '../config/conn.php';
+include_once '../includes/conn.php';
+include_once '../nav.php';
 $id_prod = $_GET['id'];
 // echo $id_prod;
 
@@ -15,7 +16,7 @@ $selAllArray = mysqli_fetch_all($selAll, MYSQLI_ASSOC);
 
 <body>
     <section>
-        <?php foreach ($selAllArray as $key => $value) : ?>
+        <?php foreach ($selAllArray as  $value) : ?>
             <article>
                 <h2><?= $value['name_products']; ?></h2>
                 <p><?= $value['name_categories']; ?></p>

@@ -15,5 +15,8 @@ if (isset($_GET['term'])) {
     foreach ($getProducs as $city) {
         $list[] = $city['name_products'];
     }
-    echo json_encode($list);
+    $arrayProd = json_encode($list);
+    echo $arrayProd;
+
+
 }
