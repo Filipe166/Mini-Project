@@ -17,7 +17,11 @@ var_dump($selAllArray);
     <section>
         <?php foreach ($selAllArray as $key => $value) : ?>
             <article>
-
+                <h2><?= $value['name_products']; ?></h2>
+                <p><?= $value['relese_date_products']; ?></p>
+                <p><?= $value['discription_products']; ?></p>
+                <p><?= $value['price_products']; ?></p>
+                <img src="<?= $value['post_products']; ?>" width="200">
             </article>
 
         <?php endforeach ?>
