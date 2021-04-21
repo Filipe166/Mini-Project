@@ -1,3 +1,21 @@
+
+function done(result) {
+    $('#descri').html('');
+    $.each(result, function (key, JsonCat) {
+        console.log(JsonCat);
+        $('#descri').append("<img src=" + JsonCat.post_products + " >")
+        $('#descri').append("<p> " + JsonCat.name_products + "</p>")
+        $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
+        $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
+        $('#descri').append("<p> " + JsonCat.price_products + "</p>")
+        $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
+
+    })
+}
+function fail() {
+
+}
+
 //load pag
 $(document).ready(function () {
     //console.log($('#ccat').val());
@@ -9,18 +27,7 @@ $(document).ready(function () {
 
 
         .done(function (result) {
-            // console.log('sussece' + result);
-            $('#descri').html('');
-            $.each(result, function (key, JsonCat) {
-                console.log(JsonCat);
-                $('#descri').append("<img src=" + JsonCat.post_products + " >")
-                $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-                $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
-
-            })
+            done(result);
         })
         .fail(function (result) {
             console.log('Ajax fail' + result);
@@ -101,7 +108,7 @@ $('#des').click(function (e) {
         url: 'Modulo_php/catalog_q.php',
         dataType: 'json',
         type: 'post',
-        data: 'as',
+        data: 'des',
     })
 
         .done(function (result) {
