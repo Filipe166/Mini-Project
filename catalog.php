@@ -13,7 +13,7 @@ $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
         <form action="" method="post">
 
             <select name="cat" id="ccat">
-                <!-- <option value="0">Categorie</option> -->
+                <option value="0">Categorie</option>
                 <?php foreach ($catArray as  $categori) : ?>
                     <label for="">Filter</label>
                     <option value="<?php echo $categori['id_categories'] ?>"><?php echo $categori['name_categories'] ?></option>
@@ -24,9 +24,9 @@ $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
         </form>
 
 
-        <div>
+        <!-- <div>
             Sort by Date : <button id="asc">Asc </button> / <button id="des">Des </button>
-        </div>
+        </div> -->
 
     </section>
     <!-- came for the ajax -->
