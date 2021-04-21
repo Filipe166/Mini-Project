@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -107,20 +107,41 @@
         <div class="cat_inside">
             <ul class="cat_ul">
                 <div class="cat_1 cat">
-                    <img src="assets/BD/gaming-desktops-2.jpg" alt="">
-                    <li><a href="#">Desktops</a></li>
+                    <li>
+                        <a href="Modulo_php/fullCat.php?cat=1">
+                            <img src="assets/BD/gaming-desktops-2.jpg" alt="">
+                            Desktops
+                        </a>
+                    </li>
+
                 </div>
+
                 <div class="cat_2 cat">
-                    <img src="assets/BD/4.webp" alt="">
-                    <li><a href="#">Laptops</a></li>
+
+                    <li>
+                        <a href="Modulo_php/fullCat.php?cat=2">
+                            <img src="assets/BD/4.webp" alt="">
+                            Laptops
+                        </a>
+                    </li>
                 </div>
                 <div class="cat_3 cat">
-                    <img src="assets/BD/unnamed-removebg-preview (2).png" alt="">
-                    <li><a href="#">Computer components</a></li>
+
+                    <li>
+                        <a href="Modulo_php/fullCat.php?cat=3">
+                            <img src="assets/BD/unnamed-removebg-preview (2).png" alt="">
+                            Computer components
+                        </a>
+                    </li>
                 </div>
                 <div class="cat_4 cat">
-                    <img src="assets/BD/gearshop-2.jpg" alt="">
-                    <li><a href="#">Peripheral Devices</a></li>
+
+                    <li>
+                        <a href="Modulo_php/fullCat.php?cat=4">
+                            <img src="assets/BD/gearshop-2.jpg" alt="">
+                            Peripheral Devices
+                        </a>
+                    </li>
                 </div>
         </div>
         </ul>
