@@ -39,6 +39,7 @@
 
     <?php
     include_once 'includes/conn.php';
+    include_once 'nav-no-searchbar.php';
 
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $queryCategories = "SELECT name_categories, id_categories FROM categories";
