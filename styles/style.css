@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-image: linear-gradient(to left, #434343 -50%, black 100%);
+    margin: auto;
+    color: white;
+}
+
+.header_nav{
+    max-width: 80%;
+    margin: auto;
+}
+footer{
+
+    background-color: black;
+}
+.footer_content {
+    width: 90%;
+    margin: auto;
+    
+    height: 400px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer_img img{
+    width: 200px;
+    height: 200px;
+}
+.footer_name h2{
+    margin-bottom: 20px;
+    color: red;
+}
