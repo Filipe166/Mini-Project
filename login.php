@@ -17,7 +17,7 @@
         <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" name="login" value="Log In"> <br>
         <a href="register.php">Don't have an account yet? Click here to go to register.</a> <br>
-        <a href="register.php">Forgot your password?</a>
+        <a href="reset_pw.php">Forgot your password?</a>
 
     </form>
 </body>

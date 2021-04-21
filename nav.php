@@ -25,10 +25,6 @@
   <input type="text" placeholder="Search" />
   <input type="submit" />
 
-  <p>
-    We will describe the website here, introduces the concept and firstly,
-    displays a large and wide search field, for searching among the products.
-  </p>
 
 
 </body>
