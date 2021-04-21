@@ -20,12 +20,12 @@
 
     if (isset($_POST['reg'])) {
         // Validations of the inputs
-        $firstname = trim($_POST['firstname']);
-        $lastname = trim($_POST['lastname']);
-        $email = trim($_POST['email']);
+        $firstname = htmlspecialchars(trim($_POST['firstname']));
+        $lastname = htmlspecialchars(trim($_POST['lastname']));
+        $email = htmlspecialchars(trim($_POST['email']));
         $sanitizeEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
-        $password = trim($_POST['password']);
-        $password_confirm = trim($_POST['password_confirm']);
+        $password = htmlspecialchars(trim($_POST['password']));
+        $password_confirm = htmlspecialchars(trim($_POST['password_confirm']));
 
         if (empty($firstname)) {
             $errors['firstname'] = 'First name is mandatory.<br>';
@@ -52,7 +52,7 @@
         if (count($errors) == 0) {
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $query = "SELECT * FROM user WHERE email_user = '$sanitizeEmail'";
-            
+
             $_SESSION['email'] = $_POST['email'];
             $resultMail = mysqli_query($conn, $query);
 

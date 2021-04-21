@@ -2,11 +2,11 @@
 session_start();
 include_once 'config/conn.php';
 if (isset($_POST['submit'])) {
-    $user_id = $_POST['user_id'];
+    $user_id = $_POST['user'];
     $result = mysqli_query($conn, "SELECT * FROM user where id_user='" . $_POST['user_id'] . "'");
     $row = mysqli_fetch_assoc($result);
-    $fetch_user_id = $row['user_id'];
-    $email_id = $row['email_id'];
+    $fetch_user_id = $row['user'];
+    $email_id = $row['email'];
     $password = $row['password'];
     if ($user_id == $fetch_user_id) {
         $to = $email_id;
