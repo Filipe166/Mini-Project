@@ -25,6 +25,7 @@
         $email = trim($_POST['email']);
         $sanitizeEmail = filter_var($email, FILTER_SANITIZE_EMAIL);
         $password = trim($_POST['password']);
+        $password_confirm = trim($_POST['password_confirm']);
 
         if (empty($firstname)) {
             $errors['firstname'] = 'First name is mandatory.<br>';
@@ -40,6 +41,9 @@
         if (strlen($password) < 8) {
             $errors['password'] = 'Password should have at least 8 characters.<br>';
         }
+        if ($password != $password_confirm) {
+            $errors['password_confirm'] = 'Passwords must match.<br>';
+        }
 
         if (!filter_var($sanitizeEmail, FILTER_VALIDATE_EMAIL)) {
             $errors['email'] = 'Email has to be a valid one.<br>';
@@ -48,7 +52,8 @@
         if (count($errors) == 0) {
             $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
             $query = "SELECT * FROM user WHERE email_user = '$sanitizeEmail'";
-
+            
+            $_SESSION['email'] = $_POST['email'];
             $resultMail = mysqli_query($conn, $query);
 
             if (mysqli_num_rows($resultMail) > 0) {
@@ -64,13 +69,15 @@
                 // Execute the query
                 $result = mysqli_query($conn, $query);
 
-                if ($result)
+                if ($result) {
                     echo 'Insert successfull.';
-                else
+                    echo '<a href="account.php">Go to account page</a>';
+                } else
                     echo 'Something went wrong inserting.';
             }
         }
     }
+
 
     ?>
 
@@ -87,6 +94,9 @@
 
         <input type="password" name="password" placeholder="Password"><br>
         <?php if (isset($errors['password'])) echo $errors['password'] ?>
+
+        <input type="password" name="password_confirm" placeholder="Confirm password"><br>
+        <?php if (isset($errors['password_confirm'])) echo $errors['password_confirm'] ?>
 
         <input type="submit" name="reg" value="Register">
     </form>
