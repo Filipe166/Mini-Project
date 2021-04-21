@@ -17,7 +17,7 @@
         <input type="password" name="password" placeholder="Password"><br>
         <input type="submit" name="login" value="Log In"> <br>
         <a href="register.php">Don't have an account yet? Click here to go to register.</a> <br>
-        <a href="register.php">Forgot your password?</a>
+        <a href="reset_pw.php">Forgot your password?</a>
 
     </form>
 </body>
@@ -31,8 +31,8 @@ include_once 'nav.php';
 // If form was submitted
 if (isset($_POST['login'])) {
 
-    $mail = trim($_POST['email']);
-    $password = trim($_POST['password']);
+    $mail = htmlspecialchars(trim($_POST['email']));
+    $password = htmlspecialchars(trim($_POST['password']));
 
     $conn = mysqli_connect(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
@@ -50,7 +50,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $mail['password'])) {
             session_start();
             // Save the mail (from my form) into the session
-            $_SESSION['mail'] = $_POST['email'];
+            $_SESSION['email'] = $_POST['email'];
             echo '<a href="account.php">Go to account page</a>';
         } else {
             echo 'Password doesnt match';
