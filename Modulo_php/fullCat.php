@@ -1,5 +1,6 @@
 <?php
 include_once '../includes/conn.php';
+
 if (isset($_GET['cat'])) {
     $cat = $_GET['cat'];
 
@@ -40,6 +41,11 @@ if (isset($_GET['cat'])) {
 </head>
 
 <body>
+    <?php
+    include_once '../nav.php';
+
+    ?>
+
     <section>
         <?php foreach ($selAllArray as $key => $produt) : ?>
 

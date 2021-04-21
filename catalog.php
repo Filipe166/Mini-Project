@@ -1,5 +1,5 @@
 <?php
-include_once 'config/conn.php';
+include_once 'includes/conn.php';
 $catq = ("select* from categories");
 $cat = mysqli_query($conn, $catq);
 $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
