@@ -3,13 +3,10 @@ function done(result) {
     $('#descri').html('');
     $.each(result, function (key, JsonCat) {
         console.log(JsonCat);
-        $('#descri').append("<img src=" + JsonCat.post_products + " >")
-        $('#descri').append("<p> " + JsonCat.name_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.relese_date_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.discription_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.price_products + "</p>")
-        $('#descri').append("<p> " + JsonCat.name_categories + "</p>")
-        $('#descri').append('<p> <a href= "Modulo_php/detale.php?id=' + JsonCat.id_products + '">Detaill</a></p>')
+        $('#descri').append("<div><img src=" + JsonCat.post_products + "> <div><p> " + JsonCat.name_products + "</p><p> " + JsonCat.relese_date_products + "</p><p> " + JsonCat.discription_products + "</p><p> " + JsonCat.price_products + "</p><p> <a href= 'Modulo_php/detale.php?id=" + JsonCat.id_products + "'>Detaill</a></p></div></div>")
+
+
+
 
     })
 }
