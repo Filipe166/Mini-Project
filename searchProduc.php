@@ -17,6 +17,4 @@ if (isset($_GET['term'])) {
     }
     $arrayProd = json_encode($list);
     echo $arrayProd;
-
-
 }

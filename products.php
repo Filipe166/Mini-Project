@@ -70,6 +70,27 @@ $catArray = mysqli_fetch_all($cat, MYSQLI_ASSOC);
         .search_Pro label {
             color: white;
         }
+
+        #descri {
+            display: flex;
+            flex-basis: 150px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        #descri div {
+            width: 200px;
+            height: 350px;
+            flex-grow: 1;
+            flex: 1 1 150px;
+            margin: 5px;
+        }
+
+        #descri div img {
+            background-color: #fff;
+            width: 200px;
+            height: 200px;
+        }
     </style>
 
 </head>
