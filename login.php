@@ -1,5 +1,3 @@
-<?php include_once 'nav.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,7 +54,12 @@
     </style>
 </head>
 
+
+<?php include_once 'nav_login.php' ?>
+
 <body>
+
+
     <form action="" method="POST">
         <div>
             <h2>Login</h2>
@@ -68,11 +71,6 @@
         </div>
         <?php
         include_once 'includes/conn.php';
-        include_once 'nav.php';
-
-
-
-
         // If form was submitted
         if (isset($_POST['login'])) {
 

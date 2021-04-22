@@ -113,7 +113,7 @@
 </head>
 
 <body>
-    <?php include_once 'nav-home.php' ?>
+    <?php include_once 'nav_login.php' ?>
     <section class="pub">
         <h2>IGN gives EVO15-S laptop a 9 out of 10</h2>
     </section>

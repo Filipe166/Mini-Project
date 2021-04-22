@@ -78,12 +78,58 @@ if (isset($_POST['reg'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        form {
+            width: 300px;
+            height: 400px;
+            margin: auto;
+            background-color: white;
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            border-radius: 10px;
+        }
+
+        form input {
+            padding: 10px;
+        }
+
+        form a {
+            color: gray;
+            text-decoration: none;
+        }
+
+        form h2 {
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        input[type=submit] {
+            width: 100px;
+            border: none;
+
+
+        }
+
+        form div {
+            height: 100%;
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h2>Register</h2>
     <form action="" method="post">
+        <h2>Register</h2>
         <input type="text" name="firstname" placeholder="First Name"><br>
         <?php if (isset($errors['firstname'])) echo $errors['firstname'] ?>
 
