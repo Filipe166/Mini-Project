@@ -51,13 +51,14 @@ if (isset($_GET['cat'])) {
 
             <article>
                 <div>
-                    <img src="../uploads/ <?php echo $produt['post_products']  ?>" alt="" srcset="">
+                    <img src="../uploads/<?php echo $produt['post_products']  ?>" width="200">
                 </div>
                 <div>
                     <h2><?php echo $produt['name_products']  ?></h2>
                     <p><?php echo $produt['relese_date_products']  ?></p>
                     <p><?php echo $produt['price_products']  ?></p>
                     <p><?php echo $produt['discription_products']  ?></p>
+
 
 
                 </div>
