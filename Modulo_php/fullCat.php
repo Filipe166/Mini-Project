@@ -7,19 +7,19 @@ if (isset($_GET['cat'])) {
     if ($cat == 1) {
         $selAll_q = ("SELECT p.id_products,p.name_products,p.relese_date_products,p.discription_products,p.post_products,p.price_products,c.name_categories
           FROM products as p INNER JOIN categories as c on c.id_categories= p.id_cat
-           where c.name_categories = 'Desktop'   ");
+           where c.id_categories = 1   ");
     } elseif ($cat == 2) {
         $selAll_q = ("SELECT p.id_products,p.name_products,p.relese_date_products,p.discription_products,p.post_products,p.price_products,c.name_categories
         FROM products as p INNER JOIN categories as c on c.id_categories= p.id_cat
-        where c.name_categories = 'Laptop'   ");
+        where c.id_categories = 2  ");
     } elseif ($cat == 3) {
         $selAll_q = ("SELECT p.id_products,p.name_products,p.relese_date_products,p.discription_products,p.post_products,p.price_products,c.name_categories
         FROM products as p INNER JOIN categories as c on c.id_categories= p.id_cat
-        where c.name_categories = 'Computer components'   ");
+        where c.id_categories = 3  ");
     } elseif ($cat == 4) {
         $selAll_q = ("SELECT p.id_products,p.name_products,p.relese_date_products,p.discription_products,p.post_products,p.price_products,c.name_categories
         FROM products as p INNER JOIN categories as c on c.id_categories= p.id_cat
-        where c.name_categories = ' Peripheral Devices'   ");
+        where c.id_categories = 4  ");
     }
     $selAll = mysqli_query($conn, $selAll_q);
     $selAllArray = mysqli_fetch_all($selAll, MYSQLI_ASSOC);
