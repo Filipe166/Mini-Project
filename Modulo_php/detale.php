@@ -23,7 +23,7 @@ $selAllArray = mysqli_fetch_all($selAll, MYSQLI_ASSOC);
                 <p><?= $value['relese_date_products']; ?></p>
                 <p><?= $value['discription_products']; ?></p>
                 <p><?= $value['price_products']; ?></p>
-                <img src="<?= $value['post_products']; ?>" width="200">
+                <img src="../uploads/<?php echo $value['post_products'] ?>" width="200">
             </article>
 
         <?php endforeach ?>
